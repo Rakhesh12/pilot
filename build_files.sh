@@ -1,17 +1,16 @@
 #!/bin/bash
 set -euo pipefail
 
-# Use explicit python executable that matches the environment in Vercel logs
-PY=python3.12
+PY=python3.12     # match Vercel's Python (based on your logs)
 
-# Upgrade pip (optional but useful)
+# Optional pip upgrade
 $PY -m pip install --upgrade pip
 
-# Install dependencies explicitly (safe even if Vercel already installs them)
+# Install requirements (safe/idempotent)
 $PY -m pip install -r requirements.txt
 
-# Run migrations and collectstatic
+# Run migrations & collect static files
 $PY manage.py migrate --noinput
 $PY manage.py collectstatic --noinput --clear
 
-echo "Build script finished successfully"
+echo "Build script finished"
