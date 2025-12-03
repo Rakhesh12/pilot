@@ -1,2 +1,6 @@
-python3 -m pip install -r requirements.txt
-python3 manage.py collectstatic --noinput
+echo "Current directory: $(pwd)"
+ls -la
+python --version
+pip --version
+python -m pip install -r requirements.txt
+python manage.py collectstatic --noinput
