@@ -4,3 +4,5 @@ django-crispy-forms
 channels
 daphne
 whitenoise
+dj-database-url
+psycopg2-binary
